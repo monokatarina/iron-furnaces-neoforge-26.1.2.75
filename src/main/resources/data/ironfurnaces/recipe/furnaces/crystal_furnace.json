@@ -1,0 +1,16 @@
+﻿{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "###",
+                    "#X#",
+                    "#E#"
+                ],
+    "key":  {
+                "#":  "#c:glass_blocks/colorless",
+                "X":  "#c:furnaces/diamond",
+                "E":  "minecraft:ender_eye"
+            },
+    "result":  {
+                   "id":  "ironfurnaces:crystal_furnace"
+               }
+}

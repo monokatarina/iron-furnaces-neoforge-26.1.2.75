@@ -1,0 +1,15 @@
+﻿{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "###",
+                    "#C#",
+                    "###"
+                ],
+    "key":  {
+                "C":  "ironfurnaces:rainbow_core",
+                "#":  "ironfurnaces:rainbow_plating"
+            },
+    "result":  {
+                   "id":  "ironfurnaces:million_furnace"
+               }
+}

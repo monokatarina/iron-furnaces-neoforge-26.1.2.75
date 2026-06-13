@@ -1,0 +1,87 @@
+/*
+ * Copyright 2025 pizzaatime and XenoMustache
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package ironfurnaces.items;
+
+import ironfurnaces.IronFurnaces;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
+import net.minecraft.util.Mth;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+
+import javax.annotation.Nullable;
+import java.util.List;
+
+public class ItemRainbowCoal extends Item {
+
+    public ItemRainbowCoal(Properties properties)
+    {
+        super(properties.durability(5120));
+    }
+
+
+    @Override
+    public boolean isBarVisible(ItemStack p_150899_) {
+        return true;
+    }
+
+    @Override
+    public int getBarWidth(ItemStack stack) {
+        return (int) ((int)13 * (1 - (double) stack.getDamageValue() / (double) 5120));
+    }
+
+    @Override
+    public int getBarColor(ItemStack p_150901_) {
+        float f = Math.max(0.0F, ((float)5120 - (float)p_150901_.getDamageValue()) / (float)5120);
+        return Mth.hsvToRgb(f / 3.0F, 1.0F, 1.0F);
+    }
+
+    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+        return 200 ;
+    }
+
+
+    public boolean hasCraftingRemainingItem(ItemStack stack) {
+        return true;
+    }
+
+
+    public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
+        ItemStack stack = new ItemStack(this);
+        stack.setDamageValue(this.getDamage(itemStack) + 1);
+        if (stack.getDamageValue() >= 5120)
+        {
+            stack = ItemStack.EMPTY;
+        }
+        return stack;
+    }
+
+
+    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
+        return false;
+    }
+
+    public boolean isEnchantable(ItemStack p_77616_1_) {
+        return false;
+    }
+}

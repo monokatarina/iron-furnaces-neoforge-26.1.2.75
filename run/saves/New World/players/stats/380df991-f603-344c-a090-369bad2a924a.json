@@ -1,0 +1,54 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:hopper": 4,
+      "ironfurnaces:iron_furnace": 5,
+      "minecraft:chest": 6,
+      "minecraft:crafting_table": 1,
+      "ironfurnaces:copper_furnace": 1,
+      "ironfurnaces:netherite_furnace": 5,
+      "ironfurnaces:million_furnace": 7
+    },
+    "minecraft:picked_up": {
+      "ironfurnaces:rainbow_coal": 1,
+      "ironfurnaces:augment_factory": 3,
+      "minecraft:coal": 164,
+      "ironfurnaces:iron_furnace": 1,
+      "ironfurnaces:augment_speed": 1,
+      "minecraft:copper_ingot": 22,
+      "minecraft:furnace": 1,
+      "ironfurnaces:augment_fuel": 1,
+      "minecraft:raw_copper": 70,
+      "minecraft:iron_ingot": 31,
+      "minecraft:raw_iron": 61
+    },
+    "minecraft:dropped": {
+      "ironfurnaces:iron_furnace": 1,
+      "minecraft:raw_copper": 64,
+      "ironfurnaces:rainbow_coal": 1
+    },
+    "minecraft:crafted": {
+      "minecraft:iron_ingot": 98,
+      "minecraft:copper_ingot": 70,
+      "minecraft:air": 0,
+      "ironfurnaces:copper_furnace": 1
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 7,
+      "minecraft:time_since_rest": 333948,
+      "minecraft:walk_one_cm": 12014,
+      "minecraft:leave_game": 37,
+      "minecraft:play_time": 166974,
+      "minecraft:jump": 45,
+      "minecraft:time_since_death": 166974,
+      "minecraft:drop": 3,
+      "minecraft:open_chest": 13,
+      "minecraft:inspect_hopper": 9,
+      "minecraft:total_world_time": 200373,
+      "minecraft:fly_one_cm": 54,
+      "minecraft:crouch_one_cm": 19,
+      "minecraft:sneak_time": 188
+    }
+  },
+  "DataVersion": 4790
+}

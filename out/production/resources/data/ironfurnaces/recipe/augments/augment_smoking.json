@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#R#",
+    "PXP",
+    "#R#"
+  ],
+  "key": {
+    "#": {
+      "tag": "c:stones"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    },
+    "R": {
+      "tag": "c:dusts/redstone"
+    },
+    "X": {
+       "item": "minecraft:smoker"
+    }
+  },
+  "result": {
+    "id": "ironfurnaces:augment_smoking"
+  }
+}

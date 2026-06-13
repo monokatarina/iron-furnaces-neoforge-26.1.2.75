@@ -1,0 +1,16 @@
+﻿{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "YYY",
+                    "#X#",
+                    "YYY"
+                ],
+    "key":  {
+                "#":  "#c:glass_blocks/colorless",
+                "X":  "#c:furnaces/copper",
+                "Y":  "#c:ingots/iron"
+            },
+    "result":  {
+                   "id":  "ironfurnaces:iron_furnace"
+               }
+}

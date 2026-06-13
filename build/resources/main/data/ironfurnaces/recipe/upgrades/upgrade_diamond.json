@@ -1,0 +1,16 @@
+﻿{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "###",
+                    "GXG",
+                    "###"
+                ],
+    "key":  {
+                "#":  "#c:gems/diamond",
+                "X":  "#c:ingots/gold",
+                "G":  "#c:glass_blocks/colorless"
+            },
+    "result":  {
+                   "id":  "ironfurnaces:upgrade_diamond"
+               }
+}

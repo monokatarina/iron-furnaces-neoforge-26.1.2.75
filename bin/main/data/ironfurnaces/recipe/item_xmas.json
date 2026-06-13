@@ -1,0 +1,12 @@
+﻿{
+    "type":  "minecraft:crafting_shapeless",
+    "ingredients":  [
+                        "minecraft:yellow_dye",
+                        "minecraft:red_dye",
+                        "minecraft:paper",
+                        "minecraft:furnace"
+                    ],
+    "result":  {
+                   "id":  "ironfurnaces:item_xmas"
+               }
+}

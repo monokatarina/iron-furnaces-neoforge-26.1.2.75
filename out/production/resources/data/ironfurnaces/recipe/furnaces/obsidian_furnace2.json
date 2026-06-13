@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#Y#",
+    "YXY",
+    "#Y#"
+  ],
+  "key": {
+    "#": {
+      "tag": "c:obsidians"
+    },
+    "X": {
+      "tag": "c:furnaces/crystal"
+    },
+    "Y": {
+      "tag": "c:rods/blaze"
+    }
+  },
+  "result": {
+    "id": "ironfurnaces:obsidian_furnace"
+  }
+}

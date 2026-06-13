@@ -1,0 +1,17 @@
+﻿{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "#R#",
+                    "PXP",
+                    "#R#"
+                ],
+    "key":  {
+                "#":  "#c:stones",
+                "P":  "minecraft:paper",
+                "R":  "#c:dusts/redstone",
+                "X":  "minecraft:piston"
+            },
+    "result":  {
+                   "id":  "ironfurnaces:augment_factory"
+               }
+}

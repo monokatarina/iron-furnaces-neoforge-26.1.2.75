@@ -1,0 +1,16 @@
+﻿{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "###",
+                    "#X#",
+                    "#E#"
+                ],
+    "key":  {
+                "#":  "#c:glass_blocks/colorless",
+                "X":  "#c:gems/diamond",
+                "E":  "minecraft:ender_eye"
+            },
+    "result":  {
+                   "id":  "ironfurnaces:upgrade_crystal"
+               }
+}

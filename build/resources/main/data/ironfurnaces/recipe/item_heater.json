@@ -1,0 +1,16 @@
+﻿{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "#R#",
+                    "RXR",
+                    "#R#"
+                ],
+    "key":  {
+                "#":  "#c:stones",
+                "R":  "#c:dusts/redstone",
+                "X":  "minecraft:comparator"
+            },
+    "result":  {
+                   "id":  "ironfurnaces:item_heater"
+               }
+}

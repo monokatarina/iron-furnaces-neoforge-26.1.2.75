@@ -1,0 +1,163 @@
+---- Minecraft Crash Report ----
+// Daisy, daisy...
+
+Time: 2026-06-12 14:23:53
+Description: Ticking block entity
+
+java.lang.IllegalArgumentException: Expected resource to be non-empty: minecraft:air [0]
+	at TRANSFORMER/neoforge@26.1.2.75/net.neoforged.neoforge.transfer.TransferPreconditions.checkNonEmpty(TransferPreconditions.java:23) ~[neoforge-26.1.2.75-universal.jar:?] {}
+	at TRANSFORMER/neoforge@26.1.2.75/net.neoforged.neoforge.transfer.item.ItemStackResourceHandler.isValid(ItemStackResourceHandler.java:152) ~[neoforge-26.1.2.75-universal.jar:?] {}
+	at TRANSFORMER/neoforge@26.1.2.75/net.neoforged.neoforge.transfer.item.VanillaContainerWrapper.isValid(VanillaContainerWrapper.java:136) ~[neoforge-26.1.2.75-universal.jar:?] {}
+	at TRANSFORMER/neoforge@26.1.2.75/net.neoforged.neoforge.transfer.item.VanillaContainerWrapper.isValid(VanillaContainerWrapper.java:38) ~[neoforge-26.1.2.75-universal.jar:?] {}
+	at TRANSFORMER/neoforge@26.1.2.75/net.neoforged.neoforge.items.ItemResourceHandlerAdapter.isItemValid(ItemResourceHandlerAdapter.java:64) ~[neoforge-26.1.2.75-universal.jar:?] {}
+	at TRANSFORMER/ironfurnaces@4.3.2/ironfurnaces.tileentity.furnaces.BlockIronFurnaceTileBase.autoIO(BlockIronFurnaceTileBase.java:1271) ~[main/:?] {}
+	at TRANSFORMER/ironfurnaces@4.3.2/ironfurnaces.tileentity.furnaces.BlockIronFurnaceTileBase.tick(BlockIronFurnaceTileBase.java:1080) ~[main/:?] {}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.world.level.chunk.LevelChunk$BoundTickingBlockEntity.tick(LevelChunk.java:779) ~[minecraft-patched-26.1.2.75.jar:?] {}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.world.level.chunk.LevelChunk$RebindableTickingBlockEntityWrapper.tick(LevelChunk.java:855) ~[minecraft-patched-26.1.2.75.jar:?] {}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.world.level.Level.tickBlockEntities(Level.java:525) ~[minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:459) ~[minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1150) ~[minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:1003) ~[minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:146) ~[minecraft-patched-26.1.2.75.jar:?] {}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.MinecraftServer.processPacketsAndTick(MinecraftServer.java:1035) ~[minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.client.server.IntegratedServer.processPacketsAndTick(IntegratedServer.java:119) ~[minecraft-patched-26.1.2.75.jar:?] {}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:776) [minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:300) [minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at java.base/java.lang.Thread.run(Thread.java:1474) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at TRANSFORMER/neoforge@26.1.2.75/net.neoforged.neoforge.transfer.TransferPreconditions.checkNonEmpty(TransferPreconditions.java:23) ~[neoforge-26.1.2.75-universal.jar:?] {}
+	at TRANSFORMER/neoforge@26.1.2.75/net.neoforged.neoforge.transfer.item.ItemStackResourceHandler.isValid(ItemStackResourceHandler.java:152) ~[neoforge-26.1.2.75-universal.jar:?] {}
+	at TRANSFORMER/neoforge@26.1.2.75/net.neoforged.neoforge.transfer.item.VanillaContainerWrapper.isValid(VanillaContainerWrapper.java:136) ~[neoforge-26.1.2.75-universal.jar:?] {}
+	at TRANSFORMER/neoforge@26.1.2.75/net.neoforged.neoforge.transfer.item.VanillaContainerWrapper.isValid(VanillaContainerWrapper.java:38) ~[neoforge-26.1.2.75-universal.jar:?] {}
+	at TRANSFORMER/neoforge@26.1.2.75/net.neoforged.neoforge.items.ItemResourceHandlerAdapter.isItemValid(ItemResourceHandlerAdapter.java:64) ~[neoforge-26.1.2.75-universal.jar:?] {}
+	at TRANSFORMER/ironfurnaces@4.3.2/ironfurnaces.tileentity.furnaces.BlockIronFurnaceTileBase.autoIO(BlockIronFurnaceTileBase.java:1271) ~[main/:?] {}
+	at TRANSFORMER/ironfurnaces@4.3.2/ironfurnaces.tileentity.furnaces.BlockIronFurnaceTileBase.tick(BlockIronFurnaceTileBase.java:1080) ~[main/:?] {}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.world.level.chunk.LevelChunk$BoundTickingBlockEntity.tick(LevelChunk.java:779) ~[minecraft-patched-26.1.2.75.jar:?] {}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.world.level.chunk.LevelChunk$RebindableTickingBlockEntityWrapper.tick(LevelChunk.java:855) ~[minecraft-patched-26.1.2.75.jar:?] {}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.world.level.Level.tickBlockEntities(Level.java:525) ~[minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+-- Block entity being ticked --
+Details:
+	Name: ironfurnaces:iron_furnace // ironfurnaces.tileentity.furnaces.BlockIronFurnaceTile
+	Cached block: Block{ironfurnaces:iron_furnace}[facing=east,jovial=0,lit=true,type=0]
+	Actual block: Block{ironfurnaces:iron_furnace}[facing=east,jovial=0,lit=true,type=0]
+	Block location: World: (0,-59,0), Section: (at 0,5,0 in 0,-4,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+Stacktrace:
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.world.level.chunk.LevelChunk$BoundTickingBlockEntity.tick(LevelChunk.java:779) ~[minecraft-patched-26.1.2.75.jar:?] {}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.world.level.chunk.LevelChunk$RebindableTickingBlockEntityWrapper.tick(LevelChunk.java:855) ~[minecraft-patched-26.1.2.75.jar:?] {}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.world.level.Level.tickBlockEntities(Level.java:525) ~[minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:459) ~[minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1150) ~[minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:1003) ~[minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:146) ~[minecraft-patched-26.1.2.75.jar:?] {}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.MinecraftServer.processPacketsAndTick(MinecraftServer.java:1035) ~[minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.client.server.IntegratedServer.processPacketsAndTick(IntegratedServer.java:119) ~[minecraft-patched-26.1.2.75.jar:?] {}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:776) [minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:300) [minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at java.base/java.lang.Thread.run(Thread.java:1474) [?:?] {}
+
+
+-- Affected level --
+Details:
+	All players: 1 total; ServerPlayer{name=Dev, id=13, pos=(2.7038573034548583, -60.0, 0.3786444685247067), mode=CREATIVE, permission=owner}
+	Chunk stats: 8281
+	Level dimension: minecraft:overworld
+	Level time: 103768 game time, 103768 day time
+	Level spawn location: World: (0,-60,0), Section: (at 0,4,0 in 0,-4,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level name: New World
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Commands: true
+	Known server brands: neoforge
+	Removed feature flags: 
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+	Loaded entity count: 80
+	Server weather: Rain time: 12824 (now: true), thunder time: 14486 (now: false)
+Stacktrace:
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.level.ServerLevel.fillReportDetails(ServerLevel.java:1863) ~[minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1153) ~[minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:1003) ~[minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:146) ~[minecraft-patched-26.1.2.75.jar:?] {}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.MinecraftServer.processPacketsAndTick(MinecraftServer.java:1035) ~[minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.client.server.IntegratedServer.processPacketsAndTick(IntegratedServer.java:119) ~[minecraft-patched-26.1.2.75.jar:?] {}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:776) [minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at TRANSFORMER/minecraft@26.1.2/net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:300) [minecraft-patched-26.1.2.75.jar:?] {neoforge:access_transformer}
+	at java.base/java.lang.Thread.run(Thread.java:1474) [?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 26.1.2
+	Minecraft Version ID: 26.1.2
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 25.0.3, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 1018971512 bytes (971 MiB) / 1883242496 bytes (1796 MiB) up to 5343543296 bytes (5096 MiB)
+	Memory (heap): init: 320MiB, used: 820MiB, committed: 1796MiB, max: 5096MiB
+	Memory (non-head): init: 007MiB, used: 228MiB, committed: 235MiB, max: 000MiB
+	CPUs: 16
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 7 5700G with Radeon Graphics         
+	Identifier: AuthenticAMD Family 25 Model 80 Stepping 0
+	Microarchitecture: Zen 3
+	Frequency (GHz): 3.79
+	Number of physical packages: 1
+	Number of physical CPUs: 8
+	Number of logical CPUs: 16
+	Graphics card #0 name: AMD Radeon(TM) Graphics
+	Graphics card #0 vendor: Advanced Micro Devices, Inc.
+	Graphics card #0 VRAM (MiB): 4096.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 31.0.21924.61
+	Memory slot #0 capacity (MiB): 16384.00
+	Memory slot #0 clockSpeed (GHz): 3.20
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 3.20
+	Memory slot #1 type: DDR4
+	Virtual memory max (MiB): 26517.13
+	Virtual memory used (MiB): 18993.39
+	Swap memory total (MiB): 6144.00
+	Swap memory used (MiB): 355.48
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 22381.09, total: 242923.00
+	Space in storage for workdir (MiB): available: 22381.09, total: 242923.00
+	JVM Flags: 0 total; 
+	Debug Flags: 0 total; 
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Dev'/13, l='ServerLevel[New World]', x=2.70, y=-60.00, z=0.38]]
+	Active Data Packs: vanilla, mod_data, mod/ironfurnaces, mod/neoforge, mod/jei (incompatible)
+	Available Data Packs: minecart_improvements, redstone_experiments, trade_rebalance, vanilla, mod/ironfurnaces, mod/jei (incompatible), mod/neoforge, mod_data
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	World Seed: 5787203224719500471
+	Suppressed Exceptions: ~~NONE~~
+	Type: Integrated Server
+	Is Modded: Definitely; Client brand changed to 'neoforge'; Server brand changed to 'neoforge'
+	Launched Version: 26.1.2.75
+	Class Processors: 
+		00,00%: neoforge:neoforge_dev_dist_cleaner
+		00,00%: neoforge:computing_frames (marker)
+		00,00%: neoforge:runtime_enum_extender
+		04,05%: neoforge:access_transformer
+		00,04%: neoforge:mixin
+		00,00%: neoforge:simple_processors_default (marker)
+		00,01%: neoforge.coremods:field_to_getter.net.minecraft.world.level.biome.biome
+		00,01%: neoforge.coremods:field_to_getter.net.minecraft.world.level.block.flowerpotblock
+		00,01%: neoforge.coremods:field_to_getter.net.minecraft.world.level.levelgen.structure.structure
+		00,26%: neoforge.coremods:method_redirector
+	Mod List: 
+		main                                              |Iron Furnaces                 |ironfurnaces                  |4.3.2               |Manifest: NOSIGNATURE
+		jei-26.1.2-neoforge-29.6.2.31.jar                 |Just Enough Items             |jei                           |29.6.2.31           |Manifest: 40d62e77ef5a1d27b83dd89bf5d65cddfffa1f4ae7c4b865f04dc24ca41b3315
+		minecraft-patched-26.1.2.75.jar                   |Minecraft                     |minecraft                     |26.1.2              |Manifest: NOSIGNATURE
+		neoforge-26.1.2.75-universal.jar                  |NeoForge                      |neoforge                      |26.1.2.75           |Manifest: NOSIGNATURE
+	Crash Report UUID: 7e069c28-2e94-4268-a603-ad47b72e16a9
+	FML: 11.0.13
+	NeoForge: 26.1.2.75

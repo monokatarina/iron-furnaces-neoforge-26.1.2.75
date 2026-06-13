@@ -1,0 +1,32 @@
+﻿{
+    "type":  "minecraft:crafting_shaped",
+    "pattern":  [
+                    "###",
+                    "#S#",
+                    "#X#"
+                ],
+    "key":  {
+                "#":  "#c:ingots/silver",
+                "X":  "#c:ingots/copper",
+                "S":  "#c:stone_tool_materials"
+            },
+    "result":  {
+                   "id":  "ironfurnaces:upgrade_silver"
+               },
+    "conditions":  [
+                       {
+                           "value":  {
+                                         "type":  "neoforge:tag_empty",
+                                         "tag":  "c:ingots/silver"
+                                     },
+                           "type":  "neoforge:not"
+                       },
+                       {
+                           "value":  {
+                                         "type":  "neoforge:tag_empty",
+                                         "tag":  "c:ingots/copper"
+                                     },
+                           "type":  "neoforge:not"
+                       }
+                   ]
+}
