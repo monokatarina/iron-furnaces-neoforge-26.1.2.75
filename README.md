@@ -1,4 +1,4 @@
-# Iron Furnaces - NeoForge 1.21.4 (fork improvisado)
+# Iron Furnaces - NeoForge 26.1.2.75 (fork improvisado)
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![NeoForge](https://img.shields.io/badge/NeoForge-26.1.2.75-green)](https://neoforged.net/)
@@ -52,7 +52,7 @@ Go ahead. Fork, fix the GUI, send a pull request. I'll merge it.
 ## 🇧🇷 Português
 
 ### O que é isso?
-Um **fork porco** do Iron Furnaces, atualizado na mão para NeoForge 26.1.2.75 (Minecraft 1.21.4).  
+Um **fork porco** do Iron Furnaces, atualizado na mão para NeoForge 26.1.2.75 (Minecraft 26.1.2).  
 O mod original não foi atualizado oficialmente.
 
 **Funciona?**  
@@ -80,7 +80,7 @@ A interface está **bugada e desalinhada**. Deu preguiça de arrumar. Fiz só o 
 - ✅ **Tudo funciona** – só é feio
 
 ### Instalação
-1. Instale NeoForge 26.1.2.75 pro Minecraft 1.21.4.
+1. Instale NeoForge 26.1.2.75 pro Minecraft 26.1.2.
 2. Baixe o `.jar` na aba **Releases**.
 3. Jogue na pasta `mods`.
 4. Ignore a GUI feia.
