@@ -8,12 +8,12 @@
     "key":  {
                 "#":  "#c:ingots/silver",
                 "X":  "#c:ingots/copper",
-                "S":  "#c:stone_tool_materials"
+                "S":  "minecraft:cobblestone"
             },
     "result":  {
                    "id":  "ironfurnaces:upgrade_silver"
                },
-    "conditions":  [
+    "neoforge:conditions":  [
                        {
                            "value":  {
                                          "type":  "neoforge:tag_empty",

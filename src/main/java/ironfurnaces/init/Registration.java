@@ -55,6 +55,7 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.material.MapColor;
+import net.neoforged.fml.ModList;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
@@ -416,5 +417,14 @@ public class Registration {
 
                 output.accept(Registration.MILLION_FURNACE_ITEM.get());
                 output.accept(Registration.RAINBOW_COAL.get());
+
+                if (ModList.get().isLoaded("allthemodium")) {
+                    output.accept(Registration.ALLTHEMODIUM_FURNACE_ITEM.get());
+                    output.accept(Registration.VIBRANIUM_FURNACE_ITEM.get());
+                    output.accept(Registration.UNOBTAINIUM_FURNACE_ITEM.get());
+                    output.accept(Registration.ALLTHEMODIUM_UPGRADE.get());
+                    output.accept(Registration.VIBRANIUM_UPGRADE.get());
+                    output.accept(Registration.UNOBTAINIUM_UPGRADE.get());
+                }
             }).build());
 }

@@ -8,7 +8,7 @@
     "key":  {
                 "#":  "minecraft:magma_cream",
                 "X":  "#c:obsidians",
-                "S":  "#c:soul_fire_base_blocks",
+                "S":  "minecraft:soul_sand",
                 "N":  "minecraft:netherite_ingot"
             },
     "result":  {

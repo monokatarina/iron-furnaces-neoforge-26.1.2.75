@@ -7,7 +7,7 @@
                 ],
     "key":  {
                 "#":  "#c:ingots/copper",
-                "X":  "#c:stone_tool_materials"
+                "X":  "minecraft:cobblestone"
             },
     "result":  {
                    "id":  "ironfurnaces:upgrade_copper"
