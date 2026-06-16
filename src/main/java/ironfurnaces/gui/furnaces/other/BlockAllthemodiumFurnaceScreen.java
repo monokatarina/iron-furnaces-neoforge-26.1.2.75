@@ -21,7 +21,6 @@ import ironfurnaces.gui.furnaces.BlockIronFurnaceScreenBase;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 
 
 public class BlockAllthemodiumFurnaceScreen extends BlockIronFurnaceScreenBase<BlockAllthemodiumFurnaceContainer> {

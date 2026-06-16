@@ -29,7 +29,6 @@ import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 
 import java.util.function.Consumer;
 
@@ -40,7 +39,6 @@ public class ItemFurnace extends BlockItem {
         super(block, properties);
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext pContext, TooltipDisplay tooltipDisplay, Consumer<Component> tooltipAdder, TooltipFlag pTooltipFlag) {
         tooltipAdder.accept(Component.translatable("tooltip." + IronFurnaces.MOD_ID + ".cooktime").withStyle(ChatFormatting.BLUE).append(Component.literal(" (" + getCooktime(stack) + ")").withStyle(ChatFormatting.BLUE)));

@@ -1,5 +1,34 @@
 {
   "stats": {
+    "minecraft:picked_up": {
+      "ironfurnaces:rainbow_coal": 1,
+      "ironfurnaces:augment_factory": 3,
+      "minecraft:coal": 164,
+      "ironfurnaces:iron_furnace": 1,
+      "ironfurnaces:augment_speed": 1,
+      "minecraft:copper_ingot": 22,
+      "minecraft:furnace": 1,
+      "ironfurnaces:augment_fuel": 1,
+      "minecraft:raw_copper": 70,
+      "minecraft:iron_ingot": 31,
+      "minecraft:raw_iron": 61
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 7,
+      "minecraft:time_since_rest": 357460,
+      "minecraft:walk_one_cm": 13267,
+      "minecraft:leave_game": 42,
+      "minecraft:play_time": 178730,
+      "minecraft:jump": 52,
+      "minecraft:time_since_death": 178730,
+      "minecraft:drop": 3,
+      "minecraft:open_chest": 13,
+      "minecraft:inspect_hopper": 9,
+      "minecraft:total_world_time": 212185,
+      "minecraft:fly_one_cm": 80,
+      "minecraft:crouch_one_cm": 19,
+      "minecraft:sneak_time": 209
+    },
     "minecraft:dropped": {
       "ironfurnaces:iron_furnace": 1,
       "minecraft:raw_copper": 64,
@@ -14,40 +43,11 @@
       "ironfurnaces:netherite_furnace": 5,
       "ironfurnaces:million_furnace": 8
     },
-    "minecraft:picked_up": {
-      "ironfurnaces:rainbow_coal": 1,
-      "ironfurnaces:augment_factory": 3,
-      "minecraft:coal": 164,
-      "ironfurnaces:iron_furnace": 1,
-      "ironfurnaces:augment_speed": 1,
-      "minecraft:copper_ingot": 22,
-      "minecraft:furnace": 1,
-      "ironfurnaces:augment_fuel": 1,
-      "minecraft:raw_copper": 70,
-      "minecraft:iron_ingot": 31,
-      "minecraft:raw_iron": 61
-    },
     "minecraft:crafted": {
       "minecraft:iron_ingot": 98,
       "minecraft:copper_ingot": 70,
       "minecraft:air": 0,
       "ironfurnaces:copper_furnace": 1
-    },
-    "minecraft:custom": {
-      "minecraft:interact_with_crafting_table": 7,
-      "minecraft:time_since_rest": 356448,
-      "minecraft:walk_one_cm": 13106,
-      "minecraft:leave_game": 41,
-      "minecraft:play_time": 178224,
-      "minecraft:jump": 51,
-      "minecraft:time_since_death": 178224,
-      "minecraft:drop": 3,
-      "minecraft:open_chest": 13,
-      "minecraft:inspect_hopper": 9,
-      "minecraft:total_world_time": 211664,
-      "minecraft:fly_one_cm": 80,
-      "minecraft:crouch_one_cm": 19,
-      "minecraft:sneak_time": 209
     }
   },
   "DataVersion": 4790
