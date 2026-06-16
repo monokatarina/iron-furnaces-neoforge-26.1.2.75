@@ -1,0 +1,47 @@
+license="All Rights Reserved"
+issueTrackerURL="https://github.com/AllTheMods/AllTheModium/issues"
+
+[[mods]]
+modId="allthemodium"
+version="4.0.7"
+displayName="AllTheModium"
+logoFile="logo.png"
+authors="thevortex, whatthedrunk"
+description='''
+Allthemodium!.
+Brought to you by AllTheMods!
+'''
+
+[[mixins]]
+config="allthemodium.mixins.json"
+
+#[[accessTransformers]]
+#file="META-INF/accesstransformer.cfg"
+
+[[dependencies.allthemodium]]
+    modId="neoforge"
+    type="required"
+    versionRange="[26.1.2.41-beta,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.allthemodium]]
+    modId="minecraft"
+    type="required"
+    versionRange="[26.1.1,26.1.2]"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.allthemodium]]
+    modId="geckolib"
+    type="required"
+    versionRange="[5.5,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.allthemodium]]
+    modId="alltheores"
+    type="required"
+    versionRange="[4.0.0,)"
+    ordering="NONE"
+    side="BOTH"

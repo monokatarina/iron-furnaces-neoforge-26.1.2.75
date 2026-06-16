@@ -371,5 +371,59 @@
     },
     "done": true
   },
+  "alltheores:recipes/misc/crafting/copper/plate": {
+    "criteria": {
+      "has_copper_ingot": "2026-06-16 17:13:24 -0300"
+    },
+    "done": true
+  },
+  "alltheores:recipes/misc/crafting/iron/plate": {
+    "criteria": {
+      "has_iron_ingot": "2026-06-16 17:13:24 -0300"
+    },
+    "done": true
+  },
+  "alltheores:recipes/misc/crafting/copper/rod": {
+    "criteria": {
+      "has_copper_ingot": "2026-06-16 17:13:24 -0300"
+    },
+    "done": true
+  },
+  "alltheores:recipes/misc/crafting/copper/gear": {
+    "criteria": {
+      "has_copper_ingot": "2026-06-16 17:13:24 -0300"
+    },
+    "done": true
+  },
+  "alltheores:recipes/misc/crafting/iron/rod": {
+    "criteria": {
+      "has_iron_ingot": "2026-06-16 17:13:24 -0300"
+    },
+    "done": true
+  },
+  "alltheores:recipes/misc/copper_ore_hammer": {
+    "criteria": {
+      "has_copper_ingot": "2026-06-16 17:13:24 -0300"
+    },
+    "done": true
+  },
+  "alltheores:recipes/misc/crafting/iron/gear": {
+    "criteria": {
+      "has_iron_ingot": "2026-06-16 17:13:24 -0300"
+    },
+    "done": true
+  },
+  "alltheores:recipes/misc/crafting/copper/ingot_to_nugget": {
+    "criteria": {
+      "has_ingot": "2026-06-16 17:13:24 -0300"
+    },
+    "done": true
+  },
+  "alltheores:recipes/misc/iron_ore_hammer": {
+    "criteria": {
+      "has_iron_ingot": "2026-06-16 17:13:24 -0300"
+    },
+    "done": true
+  },
   "DataVersion": 4790
 }

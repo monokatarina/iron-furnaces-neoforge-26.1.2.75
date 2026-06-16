@@ -14,7 +14,7 @@
                    "id":  "ironfurnaces:rainbow_plating",
                    "count":  8
                },
-    "conditions":  [
+    "neoforge:conditions":  [
                        {
                            "type":  "neoforge:not",
                            "value":  {

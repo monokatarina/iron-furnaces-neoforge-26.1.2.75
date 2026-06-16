@@ -2,5 +2,6 @@
   {"version":3},
   {"ingredient":{"id":"minecraft:copper_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"minecraft:furnace"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"ironfurnaces:copper_furnace"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+  {"ingredient":{"id":"ironfurnaces:copper_furnace"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"ironfurnaces:allthemodium_furnace"},"type":"item_stack","bookmarkType":"INGREDIENT"}
 ]
