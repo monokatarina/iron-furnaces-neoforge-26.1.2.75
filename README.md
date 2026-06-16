@@ -11,7 +11,7 @@
 ## English
 
 ### What is this?
-This is a fork of Iron Furnaces, manually updated to **NeoForge 26.1.2.75 (Minecraft 1.21.4)**.
+This is a fork of Iron Furnaces, manually updated to **NeoForge 26.1.2.75 (Minecraft26.1.2)**.
 The original mod by `pizzaatime` and `XenoMustache` was not officially updated for this target.
 
 ### Does it work?
@@ -67,7 +67,7 @@ A tela agora atualiza corretamente ao trocar de furnace para generator furnace, 
 - Algumas APIs antigas/deprecated do NeoForge ainda existem no codigo interno, mas o mod compila e roda.
 
 ### Instalacao
-1. Instale NeoForge 26.1.2.75 para Minecraft 1.21.4.
+1. Instale NeoForge 26.1.2.75 para Minecraft 26.1.2
 2. Baixe o `.jar` mais recente na aba **Releases**.
 3. Coloque na pasta `mods`.
 4. Jogue.
