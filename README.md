@@ -35,7 +35,7 @@ The furnace/generator screen now updates correctly when switching modes, uses th
 
 ### Installation
 1. Install NeoForge 26.1.2.75 for Minecraft 1.21.4.
-2. Download the latest `.jar` from **Releases**.
+2. Download the latest `.jar`.
 3. Drop it into the `mods` folder.
 4. Play.
 
@@ -68,7 +68,7 @@ A tela agora atualiza corretamente ao trocar de furnace para generator furnace, 
 
 ### Instalacao
 1. Instale NeoForge 26.1.2.75 para Minecraft 26.1.2
-2. Baixe o `.jar` mais recente na aba **Releases**.
+2. Baixe o `.jar` na raiz do projeto.
 3. Coloque na pasta `mods`.
 4. Jogue.
 
