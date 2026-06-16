@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#X#",
+    "#Y#"
+  ],
+  "key": {
+    "#": {
+      "tag": "c:ingots/gold"
+    },
+    "X": {
+      "tag": "c:ingots/silver"
+    },
+    "Y": {
+      "tag": "c:storage_blocks/gold"
+    }
+  },
+  "result": {
+    "id": "ironfurnaces:upgrade_gold2"
+  },
+  "conditions": [
+    {
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/silver"
+      },
+      "type": "neoforge:not"
+    }
+  ]
+}

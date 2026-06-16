@@ -1,0 +1,7 @@
+﻿{
+  "type": "ironfurnaces:generator_blasting",
+  "energy": 10000,
+  "ingredient": {
+    "item": "minecraft:copper_ingot"
+  }
+}

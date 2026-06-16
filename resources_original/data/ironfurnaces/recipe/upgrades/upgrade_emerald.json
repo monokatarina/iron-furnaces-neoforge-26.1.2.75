@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "c:gems/emerald"
+    },
+    "X": {
+      "tag": "c:gems/diamond"
+    }
+  },
+  "result": {
+    "id": "ironfurnaces:upgrade_emerald"
+  }
+}

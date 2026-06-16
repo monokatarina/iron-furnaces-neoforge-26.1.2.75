@@ -1,95 +1,79 @@
-# Iron Furnaces - NeoForge 26.1.2.75 (fork improvisado)
+# Iron Furnaces - NeoForge 26.1.2.75
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![NeoForge](https://img.shields.io/badge/NeoForge-26.1.2.75-green)](https://neoforged.net/)
-[![Status](https://img.shields.io/badge/status-rough%20but%20works-yellow)]()
+[![Status](https://img.shields.io/badge/status-working-brightgreen)]()
 
-**English** | **Português**
+**English** | **Portugues**
 
 ---
 
-## 📖 English
+## English
 
 ### What is this?
-This is a **quick-and-dirty fork** of Iron Furnaces, manually updated to **NeoForge 26.1.2.75 (Minecraft 1.21.4)**.  
-The original mod by `pizzaatime` and `XenoMustache` was never officially updated.
+This is a fork of Iron Furnaces, manually updated to **NeoForge 26.1.2.75 (Minecraft 1.21.4)**.
+The original mod by `pizzaatime` and `XenoMustache` was not officially updated for this target.
 
-**Does it work?**  
-Yes – smelting, energy, upgrades, automation, redstone control, all furnace tiers work.
+### Does it work?
+Yes. Smelting, energy, upgrades, automation, redstone control, generator mode, factory mode, and all furnace tiers are working.
 
-**But…**  
-The GUI is **buggy and misaligned**. I got lazy and only made it functional, not pretty. Buttons might be off, backgrounds weird, etc. **Everything works mechanically**, but don't expect a polished UI.
+### GUI status
+The furnace GUI has been cleaned up and brought closer to the original mod interface.
+The furnace/generator screen now updates correctly when switching modes, uses the proper original-style textures, and the config panel/buttons are aligned and functional.
 
-### ⚠️ Important – Read This
-- I will **not** fix the interface bugs.  
-- If you want a clean GUI, **you fix it** and send a pull request.  
-- This is an **"as-is"** release for people who just need the mod working on 1.21.4.
+### Features
+- All furnace tiers
+- Energy generation and storage
+- Upgrades: speed, fuel, generator, factory, smoking, blasting
+- Auto-input/output and redstone control
+- Furnace, generator, factory, and augment interfaces
+- Crafting recipes updated for the current format
 
-### Features (what works)
-- ✅ All furnace tiers (Copper, Iron, Gold, Diamond, Netherite, etc.)
-- ✅ Energy generation & storage
-- ✅ Upgrades (speed, fuel, generator, factory, smoking, blasting)
-- ✅ Auto‑input/output and redstone control
-- ✅ Crafting recipes (1.21.4 format)
-
-### Known Issues (GUI mess)
-- ❌ Interface elements misaligned
-- ❌ Background widgets poorly positioned
-- ❌ Augment button may look weird
-- ✅ **All functionality is still there** – just ugly
+### Known issues
+- This is still a manual port, so small compatibility issues may appear.
+- Deprecated NeoForge APIs are still present in some internal code, but the mod builds and runs.
 
 ### Installation
 1. Install NeoForge 26.1.2.75 for Minecraft 1.21.4.
 2. Download the latest `.jar` from **Releases**.
-3. Drop into `mods` folder.
-4. Play. Ignore the ugly GUI.
-
-### Want to fix it?
-Go ahead. Fork, fix the GUI, send a pull request. I'll merge it.
+3. Drop it into the `mods` folder.
+4. Play.
 
 ---
 
-## 🇧🇷 Português
+## Portugues
 
-### O que é isso?
-Um **fork porco** do Iron Furnaces, atualizado na mão para NeoForge 26.1.2.75 (Minecraft 26.1.2).  
-O mod original não foi atualizado oficialmente.
+### O que e isso?
+Este e um fork do Iron Furnaces, atualizado manualmente para **NeoForge 26.1.2.75 (Minecraft 1.21.4)**.
+O mod original de `pizzaatime` e `XenoMustache` nao foi atualizado oficialmente para essa versao.
 
-**Funciona?**  
-Sim – fornalhas, energia, upgrades, automação, redstone, tudo funciona.
+### Funciona?
+Sim. Fornalhas, energia, upgrades, automacao, redstone, modo gerador, modo fabrica e todos os tiers estao funcionando.
 
-**Mas…**  
-A interface está **bugada e desalinhada**. Deu preguiça de arrumar. Fiz só o básico pra funcionar. Os botões podem estar tortos, fundo estranho, etc. **Mecanicamente está 100%**, mas feio.
+### Estado da interface
+A GUI das fornalhas foi melhorada e ficou mais proxima da interface original do mod.
+A tela agora atualiza corretamente ao trocar de furnace para generator furnace, usa as texturas corretas no estilo original, e o painel de configuracao com botoes esta alinhado e funcional.
 
-### ⚠️ Importante – Leia Isso
-- **Não vou corrigir os bugs de interface.**  
-- Quem quiser interface bonita, **corrija você mesmo** e mande um pull request.  
-- Isso é uma versão **"como está"** pra quem só precisa do mod rodando no 1.21.4.
+### Funcionalidades
+- Todos os niveis de fornalha
+- Geracao e armazenamento de energia
+- Upgrades: velocidade, combustivel, gerador, fabrica, defumacao, explosao
+- Auto-entrada/saida e controle de redstone
+- Interfaces de furnace, generator, factory e augment
+- Receitas atualizadas para o formato atual
 
-### Funcionalidades (tudo ok)
-- ✅ Todos os níveis de fornalha
-- ✅ Geração e armazenamento de energia
-- ✅ Upgrades (velocidade, combustível, gerador, fábrica, defumação, explosão)
-- ✅ Auto‑entrada/saída e controle de redstone
-- ✅ Receitas atualizadas
+### Problemas conhecidos
+- Ainda e um port manual, entao pequenos problemas de compatibilidade podem aparecer.
+- Algumas APIs antigas/deprecated do NeoForge ainda existem no codigo interno, mas o mod compila e roda.
 
-### Problemas conhecidos (bagunça da GUI)
-- ❌ Elementos desalinhados
-- ❌ Widgets de fundo mal posicionados
-- ❌ Botão de augment pode estar estranho
-- ✅ **Tudo funciona** – só é feio
-
-### Instalação
-1. Instale NeoForge 26.1.2.75 pro Minecraft 26.1.2.
-2. Baixe o `.jar` na aba **Releases**.
-3. Jogue na pasta `mods`.
-4. Ignore a GUI feia.
-
-### Quer arrumar?
-Fique à vontade. Dá fork, arruma a interface, manda pull request. Eu aceito.
+### Instalacao
+1. Instale NeoForge 26.1.2.75 para Minecraft 1.21.4.
+2. Baixe o `.jar` mais recente na aba **Releases**.
+3. Coloque na pasta `mods`.
+4. Jogue.
 
 ---
 
-## 🔗 Links
+## Links
 - [Download](https://github.com/monokatarina/iron-furnace-neoforge-26.1.2.75/releases)
 - [Pull requests welcome](https://github.com/monokatarina/iron-furnace-neoforge-26.1.2.75/pulls)
