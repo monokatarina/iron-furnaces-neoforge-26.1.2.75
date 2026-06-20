@@ -21,6 +21,10 @@ Yes. Smelting, energy, upgrades, automation, redstone control, generator mode, f
 The furnace GUI has been cleaned up and brought closer to the original mod interface.
 The furnace/generator screen now updates correctly when switching modes, uses the proper original-style textures, and the config panel/buttons are aligned and functional.
 
+### Latest update
+- Fixed a server crash when emerald or factory furnaces used auto-output with empty inventory slots after newer NeoForge transfer validation rejected `minecraft:air`.
+- Auto-export now skips empty simulated stacks before validating or inserting items into adjacent inventories.
+
 ### Features
 - All furnace tiers
 - Energy generation and storage
@@ -54,6 +58,10 @@ Sim. Fornalhas, energia, upgrades, automacao, redstone, modo gerador, modo fabri
 A GUI das fornalhas foi melhorada e ficou mais proxima da interface original do mod.
 A tela agora atualiza corretamente ao trocar de furnace para generator furnace, usa as texturas corretas no estilo original, e o painel de configuracao com botoes esta alinhado e funcional.
 
+### Ultima atualizacao
+- Corrigido um crash do servidor quando fornalhas emerald ou factory usavam auto-output com slots vazios depois que a validacao de transferencia do NeoForge passou a rejeitar `minecraft:air`.
+- A auto-exportacao agora ignora stacks simulados vazios antes de validar ou inserir itens em inventarios vizinhos.
+
 ### Funcionalidades
 - Todos os niveis de fornalha
 - Geracao e armazenamento de energia
@@ -75,5 +83,5 @@ A tela agora atualiza corretamente ao trocar de furnace para generator furnace, 
 ---
 
 ## Links
-- [Download](https://github.com/monokatarina/iron-furnace-neoforge-26.1.2.75/releases)
-- [Pull requests welcome](https://github.com/monokatarina/iron-furnace-neoforge-26.1.2.75/pulls)
+- [Download](https://github.com/monokatarina/iron-furnaces-neoforge-26.1.2.75/releases)
+- [Pull requests welcome](https://github.com/monokatarina/iron-furnaces-neoforge-26.1.2.75/pulls)

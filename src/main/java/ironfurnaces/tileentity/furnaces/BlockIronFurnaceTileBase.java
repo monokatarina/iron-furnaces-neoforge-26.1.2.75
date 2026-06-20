@@ -1256,6 +1256,9 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
                                     }
                                     for (int i = 0; i < other.getSlots(); i++) {
                                         ItemStack stack = extractItemInternal(FUEL, other.getSlotLimit(i) - other.getStackInSlot(i).getCount(), true);
+                                        if (stack.isEmpty()) {
+                                            continue;
+                                        }
                                         if (other.isItemValid(i, stack) && (other.getStackInSlot(i).isEmpty() || (ItemStack.isSameItemSameComponents(other.getStackInSlot(i), stack) && other.getStackInSlot(i).getCount() + stack.getCount() <= other.getSlotLimit(i)))) {
                                             boolean check = other.insertItem(i, extractItemInternal(FUEL, stack.getCount(), true), true).isEmpty();
                                             if (check) other.insertItem(i, extractItemInternal(FUEL, stack.getCount(), false), false);
@@ -1339,6 +1342,9 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
                                 if (!isItemGeneratorFuel(getItem(GENERATOR_FUEL))) {
                                     for (int i = 0; i < other.getSlots(); i++) {
                                         ItemStack stack = extractItemInternal(GENERATOR_FUEL, this.getItem(GENERATOR_FUEL).getMaxStackSize() - other.getStackInSlot(i).getCount(), true);
+                                        if (stack.isEmpty()) {
+                                            continue;
+                                        }
                                         if (other.isItemValid(i, stack) && (other.getStackInSlot(i).isEmpty() || (ItemStack.isSameItemSameComponents(other.getStackInSlot(i), stack) && other.getStackInSlot(i).getCount() + stack.getCount() <= other.getSlotLimit(i)))) {
                                             boolean check = other.insertItem(i, extractItemInternal(GENERATOR_FUEL, stack.getCount(), true), true).isEmpty();
                                             if (check) other.insertItem(i, extractItemInternal(GENERATOR_FUEL, stack.getCount(), false), false);
@@ -1397,6 +1403,9 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
                                         }
                                         for (int i = 0; i < other.getSlots(); i++) {
                                             ItemStack stack = extractItemInternal(FACTORY_INPUT[j] + 6, other.getSlotLimit(i) - other.getStackInSlot(i).getCount(), true);
+                                            if (stack.isEmpty()) {
+                                                continue;
+                                            }
                                             if (other.isItemValid(i, stack) && (other.getStackInSlot(i).isEmpty() || (ItemStack.isSameItemSameComponents(other.getStackInSlot(i), stack) && other.getStackInSlot(i).getCount() + stack.getCount() <= other.getSlotLimit(i)))) {
                                                 boolean check = other.insertItem(i, extractItemInternal(FACTORY_INPUT[j] + 6, stack.getCount(), true), true).isEmpty();
                                                 if (check) other.insertItem(i, extractItemInternal(FACTORY_INPUT[j] + 6, stack.getCount(), false), false);
@@ -1449,7 +1458,7 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
 
     @Nonnull
     private ItemStack extractItemInternal(int slot, int amount, boolean simulate) {
-        if (amount == 0)
+        if (amount <= 0)
             return ItemStack.EMPTY;
 
         ItemStack existing = this.getItem(slot);
