@@ -52,6 +52,7 @@ import net.minecraft.world.inventory.RecipeCraftingHolder;
 import net.minecraft.world.inventory.StackedContentsCompatible;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.crafting.*;
@@ -65,13 +66,18 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.event.EventHooks;
+import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
+import net.neoforged.neoforge.transfer.fluid.FluidResource;
+import net.neoforged.neoforge.transfer.fluid.FluidStacksResourceHandler;
+import net.neoforged.neoforge.transfer.transaction.Transaction;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -88,6 +94,7 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
     public static final int AUGMENT_BLUE = 5;
     public static final int GENERATOR_FUEL = 6;
     public static final int[] FACTORY_INPUT = new int[]{7, 8, 9, 10, 11, 12};
+    public static final int LAVA_FLUID_FUEL_AMOUNT = FluidType.BUCKET_VOLUME;
     //public Player savedPlayer;
 
     public final int[] provides = new int[Direction.values().length];
@@ -137,6 +144,17 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
                     lastGameTickEnergyUpdated = level.getGameTime();
                 }
             }
+        }
+    };
+    public final FluidStacksResourceHandler fluidStorage = new FluidStacksResourceHandler(1, LAVA_FLUID_FUEL_AMOUNT) {
+        @Override
+        public boolean isValid(int index, FluidResource resource) {
+            return isGenerator() && resource.equals(FluidResource.of(Fluids.LAVA));
+        }
+
+        @Override
+        protected void onContentsChanged(int index, net.neoforged.neoforge.fluids.FluidStack previousContents) {
+            setChanged();
         }
     };
 
@@ -440,6 +458,38 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
             burn *= 2;
         }
         return burn;
+    }
+
+    public int getFluidGeneratorBurn() {
+        if (getItem(AUGMENT_RED).getItem() instanceof ItemAugmentSmoking || getItem(AUGMENT_RED).getItem() instanceof ItemAugmentBlasting) {
+            return 0;
+        }
+        if (fluidStorage.getAmountAsInt(0) < LAVA_FLUID_FUEL_AMOUNT || !fluidStorage.getResource(0).equals(FluidResource.of(Fluids.LAVA))) {
+            return 0;
+        }
+
+        int burn = getBurnTime(new ItemStack(Items.LAVA_BUCKET), RecipeType.SMELTING, this.level);
+        if (getItem(AUGMENT_GREEN).getItem() instanceof ItemAugmentSpeed) {
+            burn /= 2;
+        } else if (getItem(AUGMENT_GREEN).getItem() instanceof ItemAugmentFuel) {
+            burn *= 2;
+        }
+        return burn;
+    }
+
+    private boolean consumeFluidGeneratorFuel() {
+        if (getFluidGeneratorBurn() <= 0) {
+            return false;
+        }
+
+        try (Transaction transaction = Transaction.openRoot()) {
+            int extracted = fluidStorage.extract(FluidResource.of(Fluids.LAVA), LAVA_FLUID_FUEL_AMOUNT, transaction);
+            if (extracted == LAVA_FLUID_FUEL_AMOUNT) {
+                transaction.commit();
+                return true;
+            }
+        }
+        return false;
     }
 
     private boolean isItemGeneratorFuel(ItemStack stack) {
@@ -917,11 +967,12 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
                         e.energyStorage.setMaxExtract(e.energyStorage.getMaxEnergyStored());
                     }
                     if (e.getEnergy() < e.getCapacity()) {
-                        if (!e.getItem(GENERATOR_FUEL).isEmpty() && e.generatorBurn <= 0) {
-                            if (e.getGeneratorBurn() > 0)
+                        if (e.generatorBurn <= 0 && (!e.getItem(GENERATOR_FUEL).isEmpty() || e.getFluidGeneratorBurn() > 0)) {
+                            int generatorBurn = e.getGeneratorBurn();
+                            if (generatorBurn > 0)
                             {
-                                e.generatorBurn = e.getGeneratorBurn();
-                                e.generatorRecentRecipeRF = (int) e.generatorBurn;
+                                e.generatorBurn = generatorBurn;
+                                e.generatorRecentRecipeRF = generatorBurn;
                                 ItemStack generatorFuelRemainder = getCraftingRemainingItem(e.getItem(GENERATOR_FUEL));
                                 if (!generatorFuelRemainder.isEmpty())
                                     e.setItem(GENERATOR_FUEL, generatorFuelRemainder);
@@ -930,6 +981,12 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
                                     if (e.getItem(GENERATOR_FUEL).isEmpty()) {
                                         e.setItem(GENERATOR_FUEL, getCraftingRemainingItem(e.getItem(GENERATOR_FUEL)));
                                     }
+                                }
+                            } else if (e.getItem(GENERATOR_FUEL).isEmpty()) {
+                                generatorBurn = e.getFluidGeneratorBurn();
+                                if (generatorBurn > 0 && e.consumeFluidGeneratorFuel()) {
+                                    e.generatorBurn = generatorBurn;
+                                    e.generatorRecentRecipeRF = generatorBurn;
                                 }
                             }
                             e.setChanged();
@@ -1792,6 +1849,7 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
         if (currentAugment.length != 3) currentAugment = new int[3];
         jovial = input.getIntOr("Jovial", 0);
         furnaceSettings.read(input.childOrEmpty("FurnaceSettings"));
+        fluidStorage.deserialize(input.childOrEmpty("FluidTank"));
         setEnergy(input.getIntOr("Energy", 0));
         lastGameTickEnergyUpdated = 0;
         recipes.clear();
@@ -1824,6 +1882,7 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
         output.putIntArray("Augment", currentAugment);
         output.putInt("Jovial", jovial);
         furnaceSettings.write(output.child("FurnaceSettings"));
+        fluidStorage.serialize(output.child("FluidTank"));
         output.putInt("Energy", getEnergy());
         ValueOutput recipesOutput = output.child("RecipesUsed");
         ValueOutput.TypedOutputList<Identifier> entries = recipesOutput.list("Entries", Identifier.CODEC);
@@ -1850,6 +1909,11 @@ public abstract class BlockIronFurnaceTileBase extends TileEntityInventory imple
 
         if (stack.getItem() instanceof ItemRainbowCoal rainbowCoal) {
             return rainbowCoal.getCraftingRemainingItem(stack);
+        }
+
+        ItemStackTemplate remainder = stack.getCraftingRemainder();
+        if (remainder != null) {
+            return remainder.create();
         }
 
         return ItemStack.EMPTY;

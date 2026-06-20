@@ -22,8 +22,9 @@ The furnace GUI has been cleaned up and brought closer to the original mod inter
 The furnace/generator screen now updates correctly when switching modes, uses the proper original-style textures, and the config panel/buttons are aligned and functional.
 
 ### Latest update
-- Fixed a server crash when emerald or factory furnaces used auto-output with empty inventory slots after newer NeoForge transfer validation rejected `minecraft:air`.
-- Auto-export now skips empty simulated stacks before validating or inserting items into adjacent inventories.
+- Lava buckets now return an empty bucket after being consumed as furnace or generator fuel.
+- Generator furnaces now accept liquid lava through NeoForge fluid capabilities, allowing tanks and pipes from modpacks to feed lava directly.
+- Liquid lava is consumed in 1 bucket amounts and generates the same energy as a lava bucket in normal generator mode.
 
 ### Features
 - All furnace tiers
@@ -59,8 +60,9 @@ A GUI das fornalhas foi melhorada e ficou mais proxima da interface original do 
 A tela agora atualiza corretamente ao trocar de furnace para generator furnace, usa as texturas corretas no estilo original, e o painel de configuracao com botoes esta alinhado e funcional.
 
 ### Ultima atualizacao
-- Corrigido um crash do servidor quando fornalhas emerald ou factory usavam auto-output com slots vazios depois que a validacao de transferencia do NeoForge passou a rejeitar `minecraft:air`.
-- A auto-exportacao agora ignora stacks simulados vazios antes de validar ou inserir itens em inventarios vizinhos.
+- Baldes de lava agora devolvem o balde vazio depois de serem consumidos como combustivel da fornalha ou do gerador.
+- Generator furnaces agora aceitam lava liquida por capabilities de fluido do NeoForge, permitindo tanques e pipes de modpacks alimentarem lava diretamente.
+- Lava liquida e consumida em quantidades de 1 balde e gera a mesma energia que um balde de lava no modo gerador normal.
 
 ### Funcionalidades
 - Todos os niveis de fornalha

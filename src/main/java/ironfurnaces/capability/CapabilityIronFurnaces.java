@@ -28,6 +28,7 @@ import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.transfer.ResourceHandler;
 import net.neoforged.neoforge.transfer.energy.EnergyHandler;
+import net.neoforged.neoforge.transfer.fluid.FluidResource;
 import net.neoforged.neoforge.transfer.item.ItemResource;
 import net.neoforged.neoforge.transfer.item.VanillaContainerWrapper;
 import net.neoforged.neoforge.transfer.item.WorldlyContainerWrapper;
@@ -81,6 +82,11 @@ public class CapabilityIronFurnaces {
                     // blocks to register for
                     furnace
             );
+            event.registerBlock(Capabilities.Fluid.BLOCK,
+                                        (level, pos, state, be, side) -> getFluidHandler((BlockIronFurnaceTileBase) be),
+                    // blocks to register for
+                    furnace
+            );
         }
 
     }
@@ -90,6 +96,10 @@ public class CapabilityIronFurnaces {
                         return new WorldlyContainerWrapper(worldlyContainer, side);
                 }
                 return VanillaContainerWrapper.of(container);
+        }
+
+        private static ResourceHandler<FluidResource> getFluidHandler(BlockIronFurnaceTileBase furnace) {
+                return furnace.fluidStorage;
         }
 
         private static EnergyHandler wrapEnergy(FEnergyStorage energyStorage) {
